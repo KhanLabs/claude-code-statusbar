@@ -1,0 +1,8 @@
+{
+  "autoContinueAtUsageLimit": true,
+  "autoCompactWindow": 300000,
+  "statusLine": {
+    "type": "command",
+    "command": "powershell -NoProfile -NoLogo -ExecutionPolicy Bypass -File C:/Users/<you>/.claude/statusline/statusline.ps1"
+  }
+}
