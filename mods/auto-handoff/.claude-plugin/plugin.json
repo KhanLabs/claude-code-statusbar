@@ -1,0 +1,20 @@
+{
+  "name": "auto-handoff",
+  "version": "0.2.0",
+  "description": "When the context reaches a limit (300k tokens by default), asks Claude to pause when it can, then runs /handoff, /clear and /pickup by itself. Never interrupts a running turn.",
+  "author": { "name": "KhanLabs" },
+  "userConfig": {
+    "thresholdTokens": {
+      "type": "number",
+      "title": "Context limit (tokens)",
+      "description": "The context size at which the handoff starts. Default 300000.",
+      "default": 300000
+    },
+    "handoffsDir": {
+      "type": "string",
+      "title": "Handoffs folder",
+      "description": "The folder /handoff writes to. Leave empty to use the handoffs folder inside your Claude config folder.",
+      "default": ""
+    }
+  }
+}

@@ -34,6 +34,8 @@ Claude Code sends the whole chat again with every message. A long chat costs mor
 
 **`/handoff` and `/pickup`.** When a chat gets long, `/handoff` writes a short note with the goal, what is done, files changed, and next steps. Then `/clear` empties the chat, and `/pickup` reads the note back so Claude carries on where it left off. The new chat is small and cheap again. Notes are kept in one folder, and finished ones move to an `archive` folder.
 
+**Auto-handoff (optional add-on).** When the chat reaches a size you choose (300K tokens by default), the add-on asks Claude to pause at a good stopping point, then runs `/handoff`, `/clear` and `/pickup` for you. It never interrupts a running turn. See [`mods/auto-handoff`](mods/auto-handoff/README.md).
+
 **Auto-continue.** Claude Code resumes on its own when your usage limit resets.
 
 **Auto-compact at 300K tokens.** On models with a 1 million token window, Claude Code normally waits until about 967K tokens before it shrinks the chat. By then you have used a lot of your limit. This setting makes it happen at 300K.
@@ -47,6 +49,7 @@ Claude Code sends the whole chat again with every message. A long chat costs mor
 | `skills/pickup/SKILL.md` | the `/pickup` command |
 | `examples/settings.json` | settings to add to Claude Code |
 | `examples/CLAUDE.md` | tells Claude what to keep when it shrinks a chat |
+| `mods/auto-handoff/` | optional add-on: asks Claude to pause, then runs `/handoff`, `/clear`, `/pickup` by itself at a chat size you choose |
 
 ## Install (Windows)
 
